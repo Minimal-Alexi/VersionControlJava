@@ -18,27 +18,14 @@ public class PalindromeChecker {
     }
 
     public static String transformInput(String input) {
-        input = input.toLowerCase();
-        input = input.replace(",", "");
-        input = input.replace("!", "");
-        return input;
+        return input.toLowerCase().replace(",", "").replace("!", "");
     }
 
     public static boolean checkPalindrome(String input) {
-        String reversed = reverseString(input);
-        if (input.equals(reversed)) {
-            return true;
-        } else {
-            return false;
-        }
+        return input.equals(reverseString(input));
     }
 
     public static String reverseString(String input) {
-        StringBuilder reversed = new StringBuilder();
-        for (int i = input.length() - 1; i >= 0; i--) {
-            reversed.append(input.charAt(i));
-        }
-        return reversed.toString();
+        return new StringBuilder(input).reverse().toString();
     }
 }
-// for commit
