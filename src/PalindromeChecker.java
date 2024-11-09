@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class PalindromeChecker {
-    private String checkedWord;
-    private boolean isPalindrome;
+    private final String checkedWord;
+    private final boolean isPalindrome;
 
     public PalindromeChecker(String input) {
         String transformed = transformInput(input);
@@ -14,7 +14,7 @@ public class PalindromeChecker {
             System.out.println("The word \"" + this.checkedWord + "\" is not a palindrome.");
         }
     }
-    
+
 
     public static String transformInput(String input) {
         input = input.toLowerCase();
