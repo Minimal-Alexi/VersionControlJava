@@ -1,21 +1,20 @@
 import java.util.Scanner;
 
 public class PalindromeChecker {
+    private final String checkedWord;
+    private final boolean isPalindrome;
 
-    public static void main(String[] args) {
-
-        Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
-
+    public PalindromeChecker(String input) {
         String transformed = transformInput(input);
-
-        boolean isPalindrome = checkPalindrome(transformed);
-        if (isPalindrome) {
-            System.out.println("The transformed input is a palindrome.");
+        this.checkedWord = transformed;
+        this.isPalindrome = checkPalindrome(transformed);
+        if (this.isPalindrome) {
+            System.out.println("The word \"" + this.checkedWord + "\" is a palindrome.");
         } else {
-            System.out.println("The transformed input is not a palindrome.");
+            System.out.println("The word \"" + this.checkedWord + "\" is not a palindrome.");
         }
     }
+
 
     public static String transformInput(String input) {
         input = input.toLowerCase();
@@ -40,5 +39,12 @@ public class PalindromeChecker {
         }
         return reversed.toString();
     }
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        PalindromeChecker palindromeChecker = new PalindromeChecker(input);
+
+    }
 }
-// for commit
+}
